@@ -137,9 +137,31 @@ Route::middleware(['auth','verified','role:user'])->group(function () {
     Route::any('/myloginhistory', [ProfileController::class, 'myLoginHistory'])->name('profile.login_history');
 
     
-    
 
-    Route::get('/allusers', [ProfileController::class, 'AllUsers'])->name('user.allusers');
+
+
+   
+    //all transaction
+    Route::get('/transaction', [ProfileController::class, 'transaction'])->name('user.transactions');
+    Route::get('/settalment', [ProfileController::class, 'settalment'])->name('user.settalment');
+    Route::any('/wallet_transactions', [ProfileController::class, 'myWalletTransactionsList'])->name('user.wallet_transactions');
+    Route::get('/paymentcreditreport', [ProfileController::class, 'paymentCreditReport'])->name('user.paymentcreditreport');
+    Route::get('/paymentdebitreport', [ProfileController::class, 'paymentDebitReport'])->name('user.paymentdebitreport');
+    
+    //All Payment Pages
+    Route::get('/paymentpage', [PaymentPageController::class, 'paymentPage'])->name('user.paymentpage');
+    Route::get('/paymentlink', [PaymentPageController::class, 'paymentLink'])->name('user.paymentlink');
+    //All wallets Routes
+    Route::get('/wallettransfer', [WalletController::class, 'walletTransfer'])->name('user.wallettransfer');
+    //All Contact Route
+    Route::get('/contactlist', [ContactController::class, 'contactList'])->name('user.contactlist');
+    Route::get('/addcontact', [ContactController::class, 'contactAdd'])->name('user.addcontact');
+    //All Bill Payment
+    Route::get('/mobilrecharge', [BillPaymentController::class, 'MobileBill'])->name('user.mobilrecharge');
+    Route::get('/phonebill', [BillPaymentController::class, 'PhoneBill'])->name('user.phonebill');
+    Route::get('/landlinebill', [BillPaymentController::class, 'LandlineBill'])->name('user.landlinebill');
+    Route::get('/gasbill', [BillPaymentController::class, 'GasBill'])->name('user.gasbill');
+    
     //All Message Routes Here
     Route::get('/messageadd', [InboxMessageController::class, 'addMessage'])->name('user.messageadd');
     Route::get('/messageinbox', [InboxMessageController::class, 'inboxMessageList'])->name('user.messageinbox');
