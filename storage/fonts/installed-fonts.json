@@ -1,0 +1,26 @@
+{
+    "poppins": {
+        "300": "\/Users\/pradeepkumar\/Documents\/Project\/DMTPORTAL\/dmtportal\/storage\/fonts\/poppins_300_56a45aadd6f4717d0b29e006a9a82359",
+        "normal": "\/Users\/pradeepkumar\/Documents\/Project\/DMTPORTAL\/dmtportal\/storage\/fonts\/poppins_normal_76df55b5114b1626b7db1a4cd816c320",
+        "500": "\/Users\/pradeepkumar\/Documents\/Project\/DMTPORTAL\/dmtportal\/storage\/fonts\/poppins_500_90dcab88268cf6d3f77b33841917903c",
+        "600": "poppins_600_ab2317e82e93420e320bf10d17d6c75b",
+        "bold": "\/Users\/pradeepkumar\/Documents\/Project\/DMTPORTAL\/dmtportal\/storage\/fonts\/poppins_bold_cc53e8e8659afa950c49e4494cbb2708"
+    },
+    "line awesome brands": {
+        "normal": "line_awesome_brands_normal_00c8d0253f5302bc192809c2580de840"
+    },
+    "line awesome free": {
+        "normal": "\/Users\/pradeepkumar\/Documents\/Project\/DMTPORTAL\/dmtportal\/storage\/fonts\/line_awesome_free_normal_ebfa8dca5a3b8819052fe57025b6da8d",
+        "900": "line_awesome_free_900_c9e73b2845902de7c025e7db323f1de4"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_7fa53c3b18db94a7b9dae9003b39442d"
+    },
+    "font awesome 5 free": {
+        "normal": "\/Users\/pradeepkumar\/Documents\/Project\/DMTPORTAL\/dmtportal\/storage\/fonts\/font_awesome_5_free_normal_5c5931447a24d316cb69f3e446493e19",
+        "900": "font_awesome_5_free_900_349cfe359a3ad536a54751c0984e8e3c"
+    },
+    "fonticon": {
+        "normal": "fonticon_normal_55d4ffcf3f60f9b130c65f52e463c5ac"
+    }
+}

@@ -1,0 +1,145 @@
+<div class="ps-10">
+<span class="form-check-label d-flex flex-column align-items-start">
+		<span class="fw-bolder fs-5 mb-0">International Settalment Cycle Setting</span>
+		<span class="text-muted fs-6">All international payment settlements depend on banking services.</span>
+</span>
+</div>
+<form action="{{route('admin.save-international-settalment')}}" method="post">
+@csrf
+<?php 
+	if(!empty($$item->SettalemntSettings)){
+		if($$item->SettalemntSettings->gateway_id == $item->id){
+			$gateway_id = $$item->SettalemntSettings->gateway_id;
+			$user_id = $$item->SettalemntSettings->user_id;
+			$international_settlement =  $$item->SettalemntSettings->international_settlement; 
+			$international_settlement_cycle =  $$item->SettalemntSettings->international_settlement_cycle; 
+			$international_settlement_time =  $$item->SettalemntSettings->international_settlement_time; 
+			$international_settlement_fee =  $$item->SettalemntSettings->international_settlement_fee;
+		}else{
+			$gateway_id 	= "";
+			$user_id 		= "";
+			$international_settlement =  ""; 
+			$international_settlement_cycle = ""; 
+			$international_settlement_time 	= ""; 
+			$international_settlement_fee 	= "";
+		}
+	}else{
+		$gateway_id 	= "";
+		$user_id 		= "";
+		$international_settlement =  ""; 
+		$international_settlement_cycle = ""; 
+		$international_settlement_time 	= ""; 
+		$international_settlement_fee 	= "";
+	}
+?>
+<div class="row g-5 g-xl-8 mb-5 p-5 ps-10">
+			<div class="col-xl-3  fs-6 fw-bolder">
+			<span class="svg-icon svg-icon-primary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f1416c">
+					<path opacity="0.3" d="M22 19V17C22 16.4 21.6 16 21 16H8V3C8 2.4 7.6 2 7 2H5C4.4 2 4 2.4 4 3V19C4 19.6 4.4 20 5 20H21C21.6 20 22 19.6 22 19Z" fill="#f1416c"></path>
+					<path d="M20 5V21C20 21.6 19.6 22 19 22H17C16.4 22 16 21.6 16 21V8H8V4H19C19.6 4 20 4.4 20 5ZM3 8H4V4H3C2.4 4 2 4.4 2 5V7C2 7.6 2.4 8 3 8Z" fill="#f1416c"></path>
+				</svg>
+			</span>
+			<label for="exampleFormControlInput1" class="required form-label">Settlement Enable</label>
+			<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-custom-class="tooltip-dark"  data-bs-toggle="tooltip" data-bs-html="true" title="This Setting will show Settalment will work or not" data-bs-original-title="" title=""></i>
+
+			<select class="form-select form-select-lg @if($international_settlement =='Enable') bg-light-success @else bg-light-danger @endif form-select-solid min-w-150px" name="international_settlement" data-control="select2" data-hide-search="true" data-placeholder="International Settlement" data-kt-ecommerce-order-filter="status">
+					<option></option>
+					<option value="Hold" @if($international_settlement =='Hold') selected="selected" @endif>On Hold</option>
+					<option value="Enable" @if($international_settlement =='Enable') selected="selected" @endif>Enable</option>
+					<option value="Disable" @if($international_settlement =='Disable') selected="selected" @endif>Disabled</option>
+				</select>
+			</div>
+			<div class="col-xl-3  fs-6 fw-bolder">
+			
+				<span class="svg-icon svg-icon-2">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f1416c">
+						<path opacity="0.3" d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z" fill="currentColor"></path>
+						<path d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z" fill="#f1416c"></path>
+						<path d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z" fill="#f1416c"></path>
+					</svg>
+				</span>
+				<label for="exampleFormControlInput1" class="required form-label">Settlement Cycle</label>
+				<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-custom-class="tooltip-dark"  data-bs-toggle="tooltip" data-bs-html="true" title="What Day Settalment Will Start After Day Of Payment." data-bs-original-title="" title=""></i>
+
+				<select class="form-select form-select-lg form-select-solid min-w-150px settlement_cycle" name="international_settlement_cycle" data-control="select2" data-hide-search="true" data-placeholder="Settlement Cycle" data-kt-ecommerce-order-filter="status">
+					<option></option>
+					<option value="T0" @if($international_settlement_cycle =='T0') selected="selected" @endif>T+0 Day of payment capture</option>
+					<option value="T1" @if($international_settlement_cycle =='T1') selected="selected" @endif>T+1 Day of payment capture</option>
+					<option value="T2" @if($international_settlement_cycle =='T2') selected="selected" @endif>T+2 Day of payment capture</option>	
+					<option value="T3" @if($international_settlement_cycle =='T3') selected="selected" @endif>T+3 Day of payment capture</option>
+					<option value="T4" @if($international_settlement_cycle =='T4') selected="selected" @endif>T+4 Day of payment capture</option>
+					<option value="T5" @if($international_settlement_cycle =='T5') selected="selected" @endif>T+5 Day of payment capture</option>
+					<option value="T6" @if($international_settlement_cycle =='T6') selected="selected" @endif>T+6 Day of payment capture</option>
+					<option value="T7" @if($international_settlement_cycle =='T7') selected="selected" @endif>T+7 Day of payment capture</option>
+					<option value="T8" @if($international_settlement_cycle =='T8') selected="selected" @endif>T+8 Day of payment capture</option>
+					<option value="T9" @if($international_settlement_cycle =='T9') selected="selected" @endif>T+9 Day of payment capture</option>
+					<option value="T10" @if($international_settlement_cycle =='T10') selected="selected" @endif>T+10 Day of payment capture</option>
+				</select>
+			</div>
+			<div class="col-xl-3  fs-6 fw-bolder">
+			<span class="svg-icon svg-icon-2 svg-icon-success">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#f1416c">
+						<path opacity="0.3" d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z" fill="currentColor"></path>
+						<path d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z" fill="#f1416c"></path>
+						<path d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z" fill="#f1416c"></path>
+					</svg>
+				</span>
+			<label for="exampleFormControlInput1" class="required form-label">Settlement Time</label>
+			<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-custom-class="tooltip-dark"  data-bs-toggle="tooltip" data-bs-html="true" title="This time indicate the amount transfer will start at this time." data-bs-original-title="" title=""></i>
+			 <select class="form-select form-select-lg form-select-solid min-w-150px" name="international_settlement_time" data-control="select2" data-hide-search="true" data-placeholder="Settlement Time" data-kt-ecommerce-order-filter="status" id="settalment_time_{{$item->id}}">
+					<option></option>
+					<option value="9:00" @if($international_settlement_time =='9:00') selected="selected" @endif>At 9:00 AM On Settalment Day</option>
+					<option value="9:30" @if($international_settlement_time =='9:30') selected="selected" @endif>At 9:30 AM On Settalment Day</option>
+					<option value="10:00" @if($international_settlement_time =='10:00') selected="selected" @endif>At 10:00 AM On Settalment Day</option>
+					<option value="10:30" @if($international_settlement_time =='10:30') selected="selected" @endif>At 10:30 AM On Settalment Day</option>
+					<option value="11:00" @if($international_settlement_time =='11:00') selected="selected" @endif>At 11:00 AM On Settalment Day</option>
+					<option value="11:30" @if($international_settlement_time =='11:30') selected="selected" @endif>At 11:30 AM On Settalment Day</option>
+					<option value="12::00" @if($international_settlement_time =='12:00') selected="selected" @endif>At 12::00 PM On Settalment Day</option>
+					<option value="12:30" @if($international_settlement_time =='12:30') selected="selected" @endif>At 12:30 PM On Settalment Day</option>
+					<option value="1:00" @if($international_settlement_time =='1:00') selected="selected" @endif>At 1:00 PM On Settalment Day</option>
+					<option value="1:30" @if($international_settlement_time =='1:30') selected="selected" @endif>At 1:30 PM On Settalment Day</option>
+					<option value="2:00" @if($international_settlement_time =='2:00') selected="selected" @endif>At 2:00 PM On Settalment Day</option>
+					<option value="2:30" @if($international_settlement_time =='2:30') selected="selected" @endif>At 2:30 PM On Settalment Day</option>
+					<option value="3:00" @if($international_settlement_time =='3:00') selected="selected" @endif>At 3:00 PM On Settalment Day</option>
+					<option value="3:30" @if($international_settlement_time =='3:30') selected="selected" @endif>At 3:30 PM On Settalment Day</option>
+					<option value="4:00" @if($international_settlement_time =='4:00') selected="selected" @endif>At 4:00 PM On Settalment Day</option>
+					<option value="4:30" @if($international_settlement_time =='4:30') selected="selected" @endif>At 4:30 PM On Settalment Day</option>
+					<option value="5:00" @if($international_settlement_time =='5:00') selected="selected" @endif>At 5:00 PM On Settalment Day</option>
+					<option value="5:30" @if($international_settlement_time =='5:30') selected="selected" @endif>At 5:30 PM On Settalment Day</option>
+					<option value="6:00" @if($international_settlement_time =='6:00') selected="selected" @endif>At 6:00 PM On Settalment Day</option>
+					<option value="6:30" @if($international_settlement_time =='6:30') selected="selected" @endif>At 6:30 PM On Settalment Day</option>
+			 </select>
+			</div>
+
+			<div class="col-xl-3  fs-6 fw-bolder">
+			₹
+			<label for="exampleFormControlInput1" class="required form-label">Settlement Fee</label>
+			<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-custom-class="tooltip-dark"  data-bs-toggle="tooltip" data-bs-html="true" title="This time indicate the amount transfer will start at this time." data-bs-original-title="" title=""></i>
+
+			<select class="form-select form-select-lg form-select-solid min-w-150px" name="international_settlement_fee" data-control="select2" data-hide-search="true" data-placeholder="Settlement Time" data-kt-ecommerce-order-filter="status">
+					<option></option>
+					<option value="0" @if($international_settlement_fee =='0') selected="selected" @endif>0%</option>
+					<option value="0.05" @if($international_settlement_fee =='0.05') selected="selected" @endif>0.05%</option>
+					<option value="0.10" @if($international_settlement_fee =='0.10') selected="selected" @endif>0.10%</option>
+					<option value="0.15" @if($international_settlement_fee =='0.15') selected="selected" @endif>0.15%</option>
+					<option value="0.20" @if($international_settlement_fee =='0.20') selected="selected" @endif>0.20%</option>
+					<option value="0.25" @if($international_settlement_fee =='0.25') selected="selected" @endif>0.25%</option>
+					<option value="0.30" @if($international_settlement_fee =='0.30') selected="selected" @endif>0.30%</option>
+					<option value="0.40" @if($international_settlement_fee =='0.40') selected="selected" @endif>0.40%</option>
+					<option value="0.50" @if($international_settlement_fee =='0.50') selected="selected" @endif>0.50%</option>
+					<option value="0.60" @if($international_settlement_fee =='0.60') selected="selected" @endif>0.60%</option>
+					<option value="0.70" @if($international_settlement_fee =='0.70') selected="selected" @endif>0.70%</option>
+					<option value="0.80" @if($international_settlement_fee =='0.80') selected="selected" @endif>0.80%</option>
+					<option value="0.90" @if($international_settlement_fee =='0.90') selected="selected" @endif>0.90%</option>
+					<option value="1.00" @if($international_settlement_fee =='1.00') selected="selected" @endif>1.00%</option>
+				</select>
+			</div>
+			
+			<div class="col-xl-3  fs-6 fw-bolder">
+				<input type="hidden" name="gateway_id" value="{{encryptString($item->id)}}">
+				<input type="hidden" name="user_id" value="{{encryptString($userProfile->id)}}">
+				<button type="submit" class="btn btn-sm btn-danger fw-bolder fs-6">Save Settalment Setting</button>
+			</div>
+			</div>
+</form>

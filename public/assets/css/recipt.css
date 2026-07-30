@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+body {
+    /* font-family: math; */
+}
+.mybtn {
+    text-align: center;
+}
+.header {
+    padding-top: 50px;
+    margin: 0 110px 0 60px;
+}
+.logo {
+    float: left;
+}
+#receipt {
+    padding-top: 10px;
+    /*margin: 0px -137px 0px -87px;*/
+}
+
+.c1 {
+    background: #6684de;
+    font-size: 12px;
+}
+.c3 {
+    background: #ffffff;
+    font-size: 12px;
+}
+tr th, tr td {
+    padding: 6px;
+}
+tr th {
+    font-weight: 100;
+}
+caption, th {
+    text-align: center;
+}
+th {
+    border: 1px solid #fcfffe;
+    color: #ffffff;
+    text-align: left;
+}
+td {
+    border: 3px solid #fcfffe;
+    font-size: 13px;
+    text-align: left;
+    width: 35%;
+    font-size: 12px;
+}
+p {
+    font-size: 13px;
+}
+td, th {
+    display: table-cell;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a {
+    color: #5D6975;
+    /*text-decoration: underline;*/
+}
+
+body {
+    /*position: relative;
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0 auto;
+    color: #001028;
+    background: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-family: Arial;*/
+    font-size: 13px !important;
+    
+}
+
+header {
+    /*padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom:1px solid #ddd;*/
+}
+
+#logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    #logo img {
+        height: 60px;
+    }
+
+/*h1 {
+    border-top: 1px solid #5D6975;
+    border-bottom: 1px solid #5D6975;
+    color: #5D6975;
+    font-size: 20px !important;
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 20px 0;
+    background-image: url('../../Js/Receipt/dimension.png');
+    padding:5px;
+}*/
+
+#project {
+    float: left;
+}
+
+    #project span {
+        color: #5D6975;
+        text-align: right;
+        width: 52px;
+        margin-right: 10px;
+        display: inline-block;
+        font-size: 10px;
+    }
+
+#company {
+    float: right;
+    text-align: right;
+}
+    #company span {
+        color: #5D6975;
+        text-align: right;
+        width: 52px;
+        margin-right: 10px;
+        display: inline-block;
+        font-size: 10px;
+    }
+    #project div,
+    #company div {
+        white-space: nowrap;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+    table tr:nth-child(2n-1) td {
+        background: #F5F5F5;
+    }
+    table th,
+    table td {
+        text-align: left;
+    }
+
+    table th {
+        padding: 5px 10px;
+        color: #5D6975;
+        border-bottom: 1px solid #C1CED9;
+        white-space: nowrap;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    table .service,
+    table .desc {
+        text-align: left;
+    }
+
+    table td {
+        padding: 10px;
+        /*text-align: right;*/
+    }
+
+        table td.service,
+        table td.desc, table td.unit, table td.qty, table td.total {
+            vertical-align: top;
+            text-align:left;
+        }
+
+        table td.unit,
+        table td.qty,
+        table td.total {
+            font-size: 13px;
+        }
+
+        table td.grand {
+            border-top: 1px solid #5D6975;
+            font-size: 13px;
+        }
+#notices {
+    text-align: center;
+}
+#notices .notice {
+    color: #5D6975;
+    font-size: 12px;
+}
+
+/*footer {
+    color: #5D6975;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #C1CED9;
+    padding: 8px 0;
+    text-align: center;
+}*/
+
+
+@media print{
+    h1{
+        font-size:12px !important;
+    }
+}
+
+.service{
+    width:20%;
+}
+.desc {
+    width: 20%;
+}
+.unit {
+    width: 30%;
+}
+.qty {
+    width: 15%;
+}
+.total {
+    width: 15%;
+}
+
+#dvContents {
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    padding:20px 0px;
+    padding-top:10px;
+    margin-top:20px;
+}
+
+
+.text-danger strong {
+    /*color: #dc3232;*/
+}
+
+.receipt-main {
+    background: #ffffff none repeat scroll 0 0;
+    border-bottom: 5px solid #333333;
+    /*border-top: 5px solid #dc3232;*/
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding: 10px 10px !important;
+    position: relative;
+    box-shadow: 0 1px 21px #acacac;
+    color: #333333;
+    /*font-family: open sans;*/
+}
+
+    .receipt-main p {
+        color: #333333;
+        line-height: 21px;
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+
+.receipt-footer h1 {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+}
+
+.receipt-main::after {
+    background: #414143 none repeat scroll 0 0;
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -0px;
+}
+
+.receipt-main thead {
+    background: #414143 none repeat scroll 0 0;
+}
+
+    .receipt-main thead th {
+        color: #fff;
+    }
+
+.receipt-right h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 1px 0;
+}
+
+.receipt-right p {
+    font-size: 12px;
+    margin: 0px;
+}
+
+    .receipt-right p i {
+        text-align: center;
+        width: 18px;
+    }
+
+.receipt-main td {
+    padding: 8px 10px !important;
+}
+
+.receipt-main th {
+    padding: 9px 10px !important;
+    background: #172b4d !important;
+}
+
+.receipt-main td {
+    font-size: 13px !important;
+    font-weight: initial !important;
+}
+
+    .receipt-main td p:last-child {
+        margin: 0;
+        padding: 0;
+    }
+
+    .receipt-main td h2 {
+        font-size: 20px;
+        font-weight: 900;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+.receipt-header-mid .receipt-left h1 {
+    font-weight: 100;
+    margin: 15px 0 0;
+    text-align: right;
+    text-transform: uppercase;
+    font-size:30px;
+}
+.receipt-left img{
+    height:60px;
+}
+.receipt-header-mid {
+    margin: 0px 0;
+    overflow: hidden;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+#container {
+    background-color: #dcdcdc;
+}
+
+
+.m-t-10{
+    margin-top:10px;
+}
+
+.tdback h4 {
+    margin: 0px;
+    font-size: 18px;
+}
+.btn {
+    background: #dc3232;
+    color: #fff;
+    border-radius: 0px;
+    border: solid 1px #f54646;
+}
+.receipt-det {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+b {
+    font-size: 13px;
+    font-weight:700;
+}
+.receipt-right b{
+    font-weight:700;
+}
+.txtsuccess {
+    color: #03a84e;
+    font-weight: 500;
+}
+.txtfail {
+    color: red;
+    font-weight: 500;
+}
+
+.txtcustfee {
+    width: 90px !important;
+    padding: 5px !important;
+    height: 25px !important;
+}
+.txtcustfee::placeholder{
+    font-weight:normal !important;
+    font-size:12px;
+}
+.card1 {
+    margin-bottom: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.08);
+    border: none;
+    background:transparent;
+}

@@ -1,0 +1,157 @@
+@extends('Admin.layouts.Admin.faqs')
+@section('content')
+<!--begin::Basic info-->
+<div class="card mb-5 mb-xl-10">
+<!--begin::Card header-->
+<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+    <!--begin::Card title-->
+    <div class="card-title m-0">
+        <h3 class="fw-bolder m-0">Add New Item To FAQ</h3>
+    </div>
+    <!--end::Card title-->
+</div>
+<!--begin::Card header-->
+    <!--begin::Content-->
+    <div id="kt_account_settings_profile_details" class="collapse show">
+        <!--begin::Form-->
+        <form id="faq-form" class="form" action="{{route('faq.save')}}" enctype="multipart/form-data" method="post">
+            @csrf
+            <!--begin::Card body-->
+            <div class="card-body border-top p-9">
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">Title Banner</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8">
+                        <!--begin::Image input-->
+                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                            <!--begin::Preview existing avatar-->
+                            <div class="image-input-wrapper h-225px" style="background-image: url(assets/media/avatars/300-1.jpg); width:800px;"></div>
+                            <!--end::Preview existing avatar-->
+                            <!--begin::Label-->
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                <i class="bi bi-pencil-fill fs-7"></i>
+                                <!--begin::Inputs-->
+                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="avatar_remove" />
+                                <!--end::Inputs-->
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Cancel-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                            <!--end::Cancel-->
+                            <!--begin::Remove-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                            <!--end::Remove-->
+                        </div>
+                        <!--end::Image input-->
+                        <!--begin::Hint-->
+                        <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                        <!--end::Hint-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Category Name</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <?php $categoryList = config('global.FAQ_CATEGORY_LIST'); //dd($categoryList); ?>
+                        <select name="category" class="form-select form-select-solid pg_category_list" id="pg_category_list" data-control="select2" data-hide-search="true" data-placeholder="Choose Category" onchange="getSubcategory()">
+                                <option></option>
+                            @foreach($categoryList as $k=>$item)
+                                <option value="{{ $k }}">{{ $k }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Sub Category Name</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <?php $categoryList = config('global.FAQ_CATEGORY_LIST');?>
+                        <select name="subcategory" class="form-select form-select-solid" id="pg_sub_category_list" data-control="select2" data-hide-search="true" data-placeholder="Choose Category">
+                        </select>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+               
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Question</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input type="text" name="title" class="form-control form-control-lg form-control-solid" placeholder="Enter Your Title Or Question" value="" />
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                
+               
+                
+               
+                <!--end::Input group-->
+                <div class="row mb-10 py-10">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Answer</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                    <div id="kt_docs_quill_autosaves" name="kt_docs_quill_autosaves">
+                        <div id="editor"></div>
+                        <input type="hidden" id="content" name="content">
+                    </div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                    
+                <!--begin::Input group-->
+                <div class="row mb-10 mt-40">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">Status</label>
+                    <!--begin::Label-->
+                    <!--begin::Label-->
+                    <div class="col-lg-8 d-flex align-items-center">
+                        <div class="form-check form-check-solid form-switch fv-row">
+                            <input class="form-check-input w-45px h-30px" type="checkbox" value="1" id="allowmarketing" checked="checked" name="status" />
+                            <label class="form-check-label" for="allowmarketing"></label>
+                        </div>
+                    </div>
+                    <!--begin::Label-->
+                </div>
+                <!--end::Input group-->
+            </div>
+            <!--end::Card body-->
+            <!--begin::Actions-->
+            <div class="card-footer d-flex justify-content-end py-6 px-9">
+                <button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
+                <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+            </div>
+            <!--end::Actions-->
+        </form>
+        <!--end::Form-->
+    </div>
+    <!--end::Content-->
+</div>
+<!--end::Basic info-->
+@endsection

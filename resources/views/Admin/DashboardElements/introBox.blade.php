@@ -1,0 +1,31 @@
+
+    <!--begin::Engage widget 3-->
+    <div class="card bg-primary h-md-100">
+        <!--begin::Body-->
+        <div class="card-body d-flex flex-column pt-13 pb-14">
+            <!--begin::Heading-->
+            <div class="m-0">
+                <!--begin::Title-->
+                <h1 class="fw-bold text-white text-center lh-lg mb-9">Hello, {{$userProfile->name}}&nbsp;{{$userProfile->last_name}}
+                <br>
+                <span class="fw-bold fs-6">Last Login: {{getFormatDate($userProfile->last_login_at,'d M Y | H:i A')}}</span></h1>
+                <!--end::Title-->
+                <!--begin::Illustration-->
+                <div class="flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center card-rounded-bottom h-200px mh-200px my-5 mb-lg-12" style="background-image:url('assets/media/svg/user.svg')"></div>
+                <!--end::Illustration-->
+            </div>
+            <!--end::Heading-->
+            <!--begin::Links-->
+            <div class="text-center">
+                <!--begin::Link-->
+                <!-- <a class="btn btn-sm btn-white btn-color-success-800 me-2" href="{{route('admin.wallet_transfer',['user'=>Crypt::encryptString($userProfile->id)])}}">Add Money To Wallet</a> -->
+                <!--end::Link-->
+                <!--begin::Link-->
+                
+                <!--end::Link-->
+            </div>
+            <!--end::Links-->
+        </div>
+        <!--end::Body-->
+    </div>
+    <!--end::Engage widget 3-->

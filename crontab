@@ -1,0 +1,1 @@
+* * * * * cd /Users/pradeepkumar/Documents/Project/DMTPORTAL/dmtportal/ && php artisan queue:work >> /Users/pradeepkumar/Documents/Project/DMTPORTAL/dmtportal/storage/logs/laravel.log 2>&1
