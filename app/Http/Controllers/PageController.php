@@ -180,7 +180,7 @@ class PageController extends Controller
         
         
         //dd($page_slug);
-        return view('Page.'.$page,[
+        return view('TwaritPage.'.$page,[
             'pagetitle'=>$pagetitle,
             'page_slug'=>$page_slug
             
