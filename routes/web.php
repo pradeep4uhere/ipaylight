@@ -110,15 +110,15 @@ Route::any('/payload-process', [SettlementController::class, 'instantSettalmentP
 
 
 
-   
+
 
 
 Route::middleware(['auth','verified','role:user'])->group(function () {
-   
+
     Route::get('user/dashboard', [ProfileController::class, 'dashboard'])->name('dashboard');
-    
+
     Route::get('dashboard', [ProfileController::class, 'dashboard'])->name('dashboard');
-   
+
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile.profile');
     Route::any('/kyc-update', [ProfileController::class, 'editProfileKYC'])->name('profile.kyc-update');
     Route::any('/kyc-update-save', [ProfileController::class, 'editProfileKYCSave'])->name('profile.kyc-update-save');
@@ -136,18 +136,18 @@ Route::middleware(['auth','verified','role:user'])->group(function () {
     Route::any('/loginhistory', [ProfileController::class, 'allLoginHistory'])->name('profile.qrcode');
     Route::any('/myloginhistory', [ProfileController::class, 'myLoginHistory'])->name('profile.login_history');
 
-    
 
 
 
-   
+
+
     //all transaction
     Route::get('/transaction', [ProfileController::class, 'transaction'])->name('user.transactions');
     Route::get('/settalment', [ProfileController::class, 'settalment'])->name('user.settalment');
     Route::any('/wallet_transactions', [ProfileController::class, 'myWalletTransactionsList'])->name('user.wallet_transactions');
     Route::get('/paymentcreditreport', [ProfileController::class, 'paymentCreditReport'])->name('user.paymentcreditreport');
     Route::get('/paymentdebitreport', [ProfileController::class, 'paymentDebitReport'])->name('user.paymentdebitreport');
-    
+
     //All Payment Pages
     Route::get('/paymentpage', [PaymentPageController::class, 'paymentPage'])->name('user.paymentpage');
     Route::get('/paymentlink', [PaymentPageController::class, 'paymentLink'])->name('user.paymentlink');
@@ -161,7 +161,7 @@ Route::middleware(['auth','verified','role:user'])->group(function () {
     Route::get('/phonebill', [BillPaymentController::class, 'PhoneBill'])->name('user.phonebill');
     Route::get('/landlinebill', [BillPaymentController::class, 'LandlineBill'])->name('user.landlinebill');
     Route::get('/gasbill', [BillPaymentController::class, 'GasBill'])->name('user.gasbill');
-    
+
     //All Message Routes Here
     Route::get('/messageadd', [InboxMessageController::class, 'addMessage'])->name('user.messageadd');
     Route::get('/messageinbox', [InboxMessageController::class, 'inboxMessageList'])->name('user.messageinbox');
@@ -171,12 +171,12 @@ Route::middleware(['auth','verified','role:user'])->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
-   
+
     //saveNewTicket
     Route::any('/save-ticket', [SupportController::class, 'saveNewTicket'])->name('support.create-ticket');
     Route::any('/reply-ticket', [SupportController::class, 'replyOnTicket'])->name('support.reply-on-ticket');
-    
-    
+
+
 
 
 
@@ -189,7 +189,7 @@ Route::middleware(['auth'])->group(function () {
 
     //All Payout Transaction Export
     Route::any('/export-payout', [CsvExportController::class, 'exportPayoutTransaction'])->name('export.payout_transaction');
-    
+
 
     Route::get('/overview', [SupportController::class, 'overview'])->name('support.overview');
     Route::get('/allticket', [SupportController::class, 'allTicketList'])->name('support.allticket');
@@ -209,5 +209,8 @@ require __DIR__.'/superdistributor.php';
 Route::get('/faq-help', [PageController::class, 'PageFAQ'])->name('page.help');
 Route::get('/faq-help/{category}', [PageController::class, 'PageFAQ'])->name('page.helpwithcat');
 
-Route::get('/{page_slug}', [PageController::class, 'PageAction'])->name('page.action');
+//Route::get('/{page_slug}', [PageController::class, 'PageAction'])->name('page.action');
 Route::get('/aboutus', function () { return view('Page.aboutus');})->name('aboutus');
+
+Route::get('/{page_slug}', [PageController::class, 'ipayLightPageAction'])->name('page.action');
+

@@ -43,7 +43,7 @@
         @include('elements.User.header')
         <!--end::Header-->
         <!--begin::Content-->
-        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">    
+        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Toolbar-->
 		@if(getAuthValue('role') == 'Retailer')
 		@include('Admin.elements.Retailer.breadcrum')
@@ -73,12 +73,12 @@
             @include('elements.bodyFooter')
             <!--end::Footer-->
         </div>
-        
+
         </div>
         <!--end::Page-->
         </div>
         <!--end::Root-->
-		
+
          <!--start::Model Box-->
         @include('elements.modelbox')
         <!--end::Model Box-->
@@ -121,7 +121,7 @@
 
 					$('.copyBtn').on('click',function(){
 						var copyButton = $(this).attr("data-clipboard-target");
-						var copyButtonId = $(this).attr("id"); 
+						var copyButtonId = $(this).attr("id");
 						//alert(copyButtonId);
 						//alert(copyButton);
 						var inputField = document.getElementById(copyButton);
@@ -139,8 +139,6 @@
 					});
 		});
 	</script>
-	
-		
 	</body>
 	<!--end::Body-->
 </html>

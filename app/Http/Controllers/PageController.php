@@ -219,4 +219,51 @@ class PageController extends Controller
 
         ]);
     }
+
+
+
+
+
+     public function ipayLightPageAction(Request $request, $page_slug=''){
+
+        if($page_slug == 'payment-gateways'){
+            $pagetitle = "Payment Gateways";
+            $page = 'services.payment_gatwways';
+        }elseif($page_slug == 'payout-solutions'){
+            $pagetitle = "Payout Solutions";
+            $page = 'services.payout_solutions';
+        }elseif($page_slug == 'about-us'){
+            $pagetitle = "About Us";
+            $page = 'services.aboutus';
+        }elseif($page_slug == 'contact-us'){
+            $pagetitle = "Contact Us";
+            $page = 'services.contactus';
+        }elseif($page_slug == 'privacy-policy'){
+            $pagetitle = "Privacy Policy";
+            $page = 'services.privacy-policy';
+        }elseif($page_slug == 'cookie-policy'){
+            $pagetitle = "Cookie Policy";
+            $page = 'services.cookiepolicy';
+        }elseif($page_slug == 'terms-of-use'){
+            $pagetitle = "Terms of Use";
+            $page = 'services.termsofuse';
+        }elseif($page_slug == 'terms-conditions'){
+            $pagetitle = "Terms and Conditions";
+            $page = 'services.termsandconditions';
+        }
+        else{
+            $pagetitle = "Home";
+            $page = 'welcome';
+            $page_slug = 'home';
+        }
+        //dd($page_slug);
+        return view('ipaylight.'.$page,[
+            'pagetitle'=>$pagetitle,
+            'page_slug'=>$page_slug
+
+        ]);
+    }
+
+
+
 }
