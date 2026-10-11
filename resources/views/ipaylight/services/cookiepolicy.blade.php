@@ -1,3 +1,4 @@
+
 @extends('layouts.Frontend.ipaylight_page')
 @props(['title'])
 @section('content')
@@ -11,13 +12,13 @@
 				<div class="row">
 					<div class="col-xl-8 m-auto">
                         <ul class="style-none d-inline-flex justify-content-center pager">
-                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
                             <li>/</li>
                             <li>Pages</li>
-                             <li>Cookie Policy</li>
+                            <li>Cookie Policy</li>
                         </ul>
                         <h1 class="hero-heading">Cookie Policy</h1>
-                        <p class="text-lg"> ipaylight is a payment infrastructure company from India, run by Ipaylight Technologies Pvt. Ltd. We help businesses collect payments and send payouts with simple tools and dependable technology.</p>
+                        <p class="text-lg">iPayLight is a payment infrastructure company from India, operated by Ipaylight Technologies Pvt. Ltd. This Cookie Policy explains how we use cookies and similar technologies when you visit our website.</p>
                     </div>
 				</div>
 			</div>
@@ -28,12 +29,9 @@
 		</div>
 		<!-- /.inner-banner-two -->
 
-
-
-
-        <!--
+		<!--
 		=====================================================
-			BLock Feature Ten
+			Block Feature Ten
 		=====================================================
 		-->
 		<div class="block-feature-ten position-relative mt-150 lg-mt-80 pb-100 lg-pb-60">
@@ -46,21 +44,200 @@
 						<!-- /.title-one -->
 					</div>
 				</div>
+
 				<div class="line-wrapper position-relative">
                     <div class="row gx-lg-5">
+
                         <div class="col-xl-12 col-md-12 wow fadeInUp">
                             <div class="card-style-sixteen d-flex mt-60 lg-mt-40 mb-60 lg-mb-10">
-                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center"><img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img"></div>
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
                                 <div class="text">
-                                    <p class="m0">To make digital payments easy, safe and affordable for every Indian business, from a small local shop to a large enterprise.</p>
+                                    <h4>1. Introduction</h4>
+                                    <p class="m0">
+                                        This Cookie Policy explains how iPayLight ("we", "our" or "us") may use cookies and similar technologies on
+                                        <a href="https://ipaylight.com/">ipaylight.com</a>.
+                                        These technologies may help our website function properly, improve user experience, maintain security and understand website usage.
+                                        This policy should be read together with our Privacy Policy.
+                                    </p>
                                 </div>
                             </div>
-                            <!-- /.card-style-sixteen -->
                         </div>
 
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>2. What Are Cookies?</h4>
+                                    <p class="m0">
+                                        Cookies are small text files stored on your browser or device when you visit a website.
+                                        They allow a website to remember information about your visit.
+                                        Similar technologies may include browser storage, pixels, tags and scripts that support website functionality or help analyse website usage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>3. Why We Use Cookies</h4>
+                                    <div class="text">
+                                        <p>Depending on the features enabled on our website, cookies may be used to:</p>
+                                        <ul>
+                                            <li>Ensure essential website functions work correctly.</li>
+                                            <li>Support session management and website security.</li>
+                                            <li>Remember user preferences and settings, where available.</li>
+                                            <li>Understand website traffic and performance, where analytics tools are enabled.</li>
+                                            <li>Identify technical issues and improve website usability.</li>
+                                        </ul>
+                                        <p class="m0">
+                                            The actual purposes depend on the cookies and technologies configured on our website.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>4. Types of Cookies</h4>
 
+                                    <h5 class="fw-bold mt-25 mb-10">Essential Cookies</h5>
+                                    <p>
+                                        These cookies may be necessary for core website functions, such as navigation, session management and security.
+                                    </p>
+
+                                    <h5 class="fw-bold mt-25 mb-10">Functional Cookies</h5>
+                                    <p>
+                                        These cookies may remember your preferences and settings to provide a more consistent browsing experience.
+                                    </p>
+
+                                    <h5 class="fw-bold mt-25 mb-10">Analytics Cookies</h5>
+                                    <p>
+                                        Where analytics services are enabled, these cookies may help us understand how visitors interact with our website and identify areas for improvement.
+                                    </p>
+
+                                    <h5 class="fw-bold mt-25 mb-10">Marketing Cookies</h5>
+                                    <p class="m0">
+                                        If marketing or advertising technologies are used, they may help measure campaigns or provide relevant content. Consent will be obtained where required by applicable law.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>5. Third-Party Cookies</h4>
+                                    <p class="m0">
+                                        Some website features may use third-party services, such as analytics providers, security tools, embedded content or payment service providers.
+                                        These providers may use cookies or similar technologies according to their own policies.
+                                        We encourage you to review the privacy policies of any third-party services you use.
+                                        Third-party cookies should be disclosed according to the services actually configured on our website.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>6. Managing Cookie Preferences</h4>
+                                    <p class="m0">
+                                        Where required by applicable law, we will request consent before using non-essential cookies or similar technologies.
+                                        If a cookie preference tool is available on our website, you may use it to review or change your choices.
+                                        You may also withdraw consent through the available controls where supported.
+                                        Strictly necessary cookies may continue to operate where permitted by law and required for essential website functions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>7. How to Disable Cookies</h4>
+                                    <p class="m0">
+                                        Most web browsers allow you to block, restrict or delete cookies through their settings.
+                                        Please refer to your browser's help documentation for instructions.
+                                        Disabling certain cookies may affect website functionality, session management or the availability of some features.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>8. Cookies and Personal Information</h4>
+                                    <p class="m0">
+                                        Information collected through cookies may qualify as personal data when it identifies or can reasonably be linked to an individual.
+                                        Where applicable, we handle such information in accordance with our Privacy Policy and relevant data protection requirements.
+                                        We take reasonable measures to protect information handled through our website.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>9. Changes to This Cookie Policy</h4>
+                                    <p class="m0">
+                                        We may update this Cookie Policy to reflect changes in our website, technologies, business practices or applicable legal requirements.
+                                        Updates will be published on this page with a revised date where appropriate.
+                                        We encourage visitors to review this policy periodically.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="card-style-sixteen d-flex mt-30 mb-60 lg-mb-10">
+                                <div class="icon tran3s rounded-circle d-flex align-items-center justify-content-center">
+                                    <img src="images/lazy.svg" data-src="images/icon/icon_62.svg" alt="" class="lazy-img">
+                                </div>
+                                <div class="text">
+                                    <h4>10. Contact Us</h4>
+                                    <p class="m0">
+                                        If you have questions about this Cookie Policy or our use of cookies, please contact iPayLight through our official contact page.
+                                        <a href="{{ url('/contact-us') }}">Contact iPayLight</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 wow fadeInUp">
+                            <div class="text mt-20">
+                                <p class="m0"><strong>Last Updated:</strong> 11 October 2026</p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -68,73 +245,5 @@
 			<img src="images/lazy.svg" data-src="images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_01">
 		</div>
 		<!-- /.block-feature-ten -->
-
-
- <!--
-		=============================================
-			BLock Feature Six
-		==============================================
-		-->
-		<div class="block-feature-six bg-two position-relative pt-150 lg-pt-60 pb-120 lg-pb-40">
-			<div class="container">
-				<div class="row gx-lg-5">
-					<div class="col-lg-4 wow fadeInLeft">
-						<div class="title-one">
-							<h2>What we do</h2>
-						</div>
-						<!-- /.title-one -->
-                        <p class="text-lg text-dark mt-40 md-mt-20 mb-35 md-mb-30">Make payouts easy for your business. </p>
-                        <a href="contact.html" class="btn-eleven d-inline-flex align-items-center md-mb-60">
-							<span class="text">TALK TO SALES</span>
-							<div class="icon tran3s rounded-circle d-flex align-items-center"><img src="images/lazy.svg" data-src="images/icon/icon_27.svg" alt="" class="lazy-img"></i></div>
-						</a>
-					</div>
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-md-6 d-flex wow fadeInUp">
-                                <div class="card-style-eight rounded-5 vstack tran3s w-100 mb-30">
-                                    <div class="icon d-flex align-items-center"><img src="images/lazy.svg" data-src="images/icon/icon_68.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-30 mb-20">Payment gateway for websites and apps</h4>
-
-									<a href="service-details.html" class="stretched-link"></a>
-                                </div>
-                                <!-- /.card-style-eight -->
-                            </div>
-                            <div class="col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="card-style-eight rounded-5 vstack tran3s w-100 mb-30 active">
-                                    <div class="icon d-flex align-items-center"><img src="images/lazy.svg" data-src="images/icon/icon_69.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-30 mb-20">Bulk payouts to bank accounts and UPI</h4>
-									<a href="service-details.html" class="stretched-link"></a>
-                                </div>
-                                <!-- /.card-style-eight -->
-                            </div>
-                            <div class="col-md-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="card-style-eight rounded-5 vstack tran3s w-100 mb-30">
-                                    <div class="icon d-flex align-items-center"><img src="images/lazy.svg" data-src="images/icon/icon_70.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-30 mb-20">UPI, QR code and bank transfer solutions</h4>
-									<a href="service-details.html" class="stretched-link"></a>
-                                </div>
-                                <!-- /.card-style-eight -->
-                            </div>
-                            <div class="col-md-6 d-flex wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="card-style-eight rounded-5 vstack tran3s w-100 mb-30">
-                                    <div class="icon d-flex align-items-center"><img src="images/lazy.svg" data-src="images/icon/icon_71.svg" alt="" class="lazy-img"></div>
-                                    <h4 class="fw-bold mt-30 mb-20">APIs and dashboards for easy reconciliation</h4>
-									<a href="service-details.html" class="stretched-link"></a>
-                                </div>
-                                <!-- /.card-style-eight -->
-                            </div>
-                        </div>
-                    </div>
-				</div>
-
-			</div>
-			<img src="images/lazy.svg" data-src="images/shape/shape_11.svg" alt="" class="lazy-img shapes shape_01">
-			<img src="images/lazy.svg" data-src="images/shape/shape_12.svg" alt="" class="lazy-img shapes shape_02">
-		</div>
-		<!-- /.block-feature-six -->
-
-
-
 
 @endsection
