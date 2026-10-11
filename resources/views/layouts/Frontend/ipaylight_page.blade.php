@@ -3,6 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 
+    <title>IPayLight - Digital Payment & Financial Solutions</title>
+    <meta name="description" content="IPayLight provides digital payment solutions for businesses, including payment gateway and payout services.">
+
+    <link rel="canonical" href="https://ipaylight.com/">
+
+    <!-- Open Graph: WhatsApp, Facebook, LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IPayLight">
+    <meta property="og:title" content="IPayLight - Digital Payment & Financial Solutions">
+    <meta property="og:description" content="Simplify business payments with IPayLight's digital payment and payout solutions.">
+    <meta property="og:url" content="https://ipaylight.com/">
+
+    <!-- Replace this with your actual publicly accessible logo/preview image URL -->
+    <meta property="og:image" content="https://ipaylight.com/small_black_logo.png">
+    <meta property="og:image:secure_url" content="https://ipaylight.com/images/ipaylight-social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IPayLight - Digital Payment & Financial Solutions">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IPayLight - Digital Payment & Financial Solutions">
+    <meta name="twitter:description" content="Digital payment and payout solutions for businesses.">
+    <meta name="twitter:image" content="https://ipaylight.com/small_black_logo.png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="keywords" content="iPaylight, Ipaylight Technologies Pvt Ltd, payment gateway India, digital payment solutions, online payment collection, bulk payouts, UPI payments, bank transfers, payment APIs, payment reconciliation">
@@ -19,14 +45,9 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="iPaylight | Payment Infrastructure & Digital Payment Solutions">
     <meta property="og:description" content="Simplify business payments with iPaylight. Explore payment collection, bulk payouts, UPI transfers and payment technology solutions.">
-    <meta property="og:image" content="{{ asset('images/assets/ogg.png') }}">
+    <meta property="og:image" content="https://ipaylight.com/small_black_logo.png">
     <meta property="og:image:alt" content="iPaylight - Payment Infrastructure Solutions">
 
-    <!-- Twitter / X Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="iPaylight | Digital Payment Solutions">
-    <meta name="twitter:description" content="Payment collection, payouts and digital payment infrastructure for businesses.">
-    <meta name="twitter:image" content="{{ asset('images/assets/ogg.png') }}">
 
     <!-- Browser Compatibility -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
