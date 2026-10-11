@@ -100,8 +100,8 @@
 									</a>
 								</div>
 								<!-- logo -->
-								<p class="lh-sm mb-45 lg-mb-30">2190 Urban Terrace, Mirpur,  <br>Licensed in 50 states.</p>
-								<p class="m0"><a href="#">+757 699-4478</a></p>
+								<p class="lh-sm mb-45 lg-mb-30">Sec-63, Noida  <br>Uttat Pradesh (India)</p>
+								<p class="m0"><a href="#">+91-9289026567</a></p>
 							</div>
 						</div>
 						<div class="col-lg-2 col-sm-4 mb-20">
