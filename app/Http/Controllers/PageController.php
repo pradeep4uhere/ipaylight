@@ -250,6 +250,9 @@ class PageController extends Controller
         }elseif($page_slug == 'terms-conditions'){
             $pagetitle = "Terms and Conditions";
             $page = 'services.termsandconditions';
+        }elseif($page_slug == 'refund-cancellation'){
+            $pagetitle = "Refund and Cancellation";
+            $page = 'services.refund_cancellation';
         }
         else{
             $pagetitle = "Home";

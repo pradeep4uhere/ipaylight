@@ -32,6 +32,8 @@
 									<li><a href="{{route('home')}}">Home</a></li>
 									<li><a href="{{route('page.action', ['page_slug' => 'about-us'])}}">About us</a></li>
 									<li><a href="{{route('page.action', ['page_slug' => 'services'])}}">services</a></li>
+                                    <li><a href="{{route('page.action', ['page_slug' => 'refund-cancellation'])}}">Refund & Cancellation</a></li>
+
 								</ul>
 							</div>
 							<div class="col-lg-2 col-sm-4 mb-20">
