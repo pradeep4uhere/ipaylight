@@ -2,15 +2,37 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
-	<meta name="description" content="Babun is a beautiful website template designed for Business & Consulting websites.">
-    <meta property="og:site_name" content="Babun">
-    <meta property="og:url" content="https://creativegigstf.com">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="iPaylight, Ipaylight Technologies Pvt Ltd, payment gateway India, digital payment solutions, online payment collection, bulk payouts, UPI payments, bank transfers, payment APIs, payment reconciliation">
+
+    <meta name="description" content="iPaylight, operated by Ipaylight Technologies Pvt. Ltd., provides payment infrastructure solutions to help businesses manage online payment collection, payouts, UPI transfers and payment operations.">
+
+    <meta name="author" content="Ipaylight Technologies Pvt. Ltd.">
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:site_name" content="iPaylight">
+    <meta property="og:url" content="https://ipaylight.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Babun - Business & Consulting HTML5 Template">
-	<meta name='og:image' content='images/assets/ogg.png'>
-	<!-- For IE -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="iPaylight | Payment Infrastructure & Digital Payment Solutions">
+    <meta property="og:description" content="Simplify business payments with iPaylight. Explore payment collection, bulk payouts, UPI transfers and payment technology solutions.">
+    <meta property="og:image" content="{{ asset('images/assets/ogg.png') }}">
+    <meta property="og:image:alt" content="iPaylight - Payment Infrastructure Solutions">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="iPaylight | Digital Payment Solutions">
+    <meta name="twitter:description" content="Payment collection, payouts and digital payment infrastructure for businesses.">
+    <meta name="twitter:image" content="{{ asset('images/assets/ogg.png') }}">
+
+    <!-- Browser Compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Responsive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- For Resposive Device -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- For Window Tab Color -->
