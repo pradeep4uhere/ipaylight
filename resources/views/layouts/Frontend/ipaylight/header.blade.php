@@ -25,8 +25,8 @@
 							<div class="collapse navbar-collapse" id="navbarNav">
 								<ul class="navbar-nav align-items-lg-center">
 									<li class="d-block d-lg-none"><div class="logo"><a href="index.html" class="d-block"><img src="images/logo/logo_01.svg" alt=""></a></div></li>
-									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="{{route('home')}}" role="button" data-bs-toggle="dropdown"
+									<li class="nav-item">
+										<a class="nav-link" href="{{route('home')}}" role="button" data-bs-toggle="dropdown"
 											data-bs-auto-close="outside" aria-expanded="false">Home
 										</a>
 
@@ -49,11 +49,9 @@
 											</li>
 						                </ul>
 						            </li>
-									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="{{route('page.action', ['page_slug' => 'about-us'])}}" role="button" data-bs-toggle="dropdown"
-											data-bs-auto-close="outside" aria-expanded="false">About
-										</a>
 
+                                    <li class="nav-item">
+										<a class="nav-link" href="{{route('page.action', ['page_slug' => 'about-us'])}}" role="button">About Us</a>
 									</li>
 
 									<li class="nav-item">
