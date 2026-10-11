@@ -26,7 +26,7 @@
 								<ul class="navbar-nav align-items-lg-center">
 									<li class="d-block d-lg-none"><div class="logo"><a href="index.html" class="d-block"><img src="images/logo/logo_01.svg" alt=""></a></div></li>
 									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+										<a class="nav-link dropdown-toggle" href="{{route('home')}}" role="button" data-bs-toggle="dropdown"
 											data-bs-auto-close="outside" aria-expanded="false">Home
 										</a>
 
